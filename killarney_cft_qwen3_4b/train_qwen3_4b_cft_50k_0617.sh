@@ -16,7 +16,7 @@ fi
 
 export CUDA_VISIBLE_DEVICES=0,1,2,3
 
-cd /map-vepfs/yubo/CriticCoT/ms-swift
+cd /scratch/y726wang/CFT-RL/ms-swift
 
 torchrun \
     --nproc_per_node 4 \
