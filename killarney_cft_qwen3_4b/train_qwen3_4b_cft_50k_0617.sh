@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -x
 
+source /home/y726wang/miniconda3/bin/activate
 conda activate swift
 
 MODEL_PATH="/scratch/y726wang/models/Qwen3-4B-Base"
