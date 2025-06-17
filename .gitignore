@@ -1,0 +1,12 @@
+local/
+arxivllm/__pycache__
+data_bk/
+corpus_data/
+dataset_construct/__pycache__
+local_*/
+.idea/
+__pycache__
+LLaMA-Factory/data/CriticCoT*
+local_*
+
+
