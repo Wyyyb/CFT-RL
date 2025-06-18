@@ -2,20 +2,23 @@
 
 USER_ENV=`whoami`
 set -x
+
 export NCCL_DEBUG=DEBUG
 export RAY_BACKEND_LOG_LEVEL=debug
 export RAY_DEDUP_LOGS=1
 
-export PROJECT_NAME= # to be replaced
-export WANDB_API_KEY= # to be replaced
+export PROJECT_NAME=CFT-RL # to be replaced
+export WANDB_API_KEY=b9840f6192b6cbeaf06e22e6761aa88a9001f356 # to be replaced
 export WANDB_OFFICIAL=1
 # export VLLM_ATTENTION_BACKEND=XFORMERS
-export HDFS_DATA_PATH= # to be replaced
-export HDFS_MODEL_PATH= # to be replaced
-export HDFS_CHECKPOINT_PATH= # to be replaced
-export HDFS_LOG_PATH= # to be replaced
+export HDFS_DATA_PATH=/scratch/y726wang/CFT-RL/verl-data/data
+export HDFS_MODEL_PATH=/scratch/y726wang/CFT-RL/verl-data
+export HDFS_CHECKPOINT_PATH=/scratch/y726wang/CFT-RL/verl-data/save_checkpoints
+export HDFS_LOG_PATH=/scratch/y726wang/CFT-RL/verl-data/verl_rl_logs
+
+
 if [ -z "$RUN_NAME" ]; then
-    RUN_NAME=general-reasoner
+    RUN_NAME=cft-rl
 fi
 
 # Default values
@@ -40,8 +43,8 @@ DATASET_NAME=webinstruct-verified
 ROLLOUT_GPU_MEMORY_UTIL=0.6
 ACTOR_OPTIMIZER_OFFLOAD=False
 ACTOR_PARAMETER_OFFLOAD=False
-MODEL_NAME=Qwen2.5-7B
-VERIFIER_NAME=general-verifier
+MODEL_NAME=Qwen3-4B-Base
+VERIFIER_NAME=general-reasoner-verifier
 
 generate_suffix() {
   local suffix=""
@@ -200,7 +203,7 @@ HYDRA_FULL_ERROR=1 ray job submit --address=${HEAD_IP}:6379 \
     algorithm.kl_ctrl.kl_coef=$KL_COEF \
     critic.ppo_micro_batch_size_per_gpu=8 \
     trainer.critic_warmup=0 \
-    trainer.logger=['console','wandb'] \
+    trainer.logger=['console'] \
     trainer.project_name=$PROJECT_NAME \
     trainer.experiment_name=$RUN_NAME \
     trainer.n_gpus_per_node=8 \
