@@ -3,6 +3,8 @@
 USER_ENV=`whoami`
 set -x
 
+export HEAD_IP=127.0.0.1
+
 export NCCL_DEBUG=DEBUG
 export RAY_BACKEND_LOG_LEVEL=debug
 export RAY_DEDUP_LOGS=1
@@ -15,7 +17,6 @@ export HDFS_DATA_PATH=/scratch/y726wang/CFT-RL/verl-data/data
 export HDFS_MODEL_PATH=/scratch/y726wang/CFT-RL/verl-data
 export HDFS_CHECKPOINT_PATH=/scratch/y726wang/CFT-RL/verl-data/save_checkpoints
 export HDFS_LOG_PATH=/scratch/y726wang/CFT-RL/verl-data/verl_rl_logs
-
 
 if [ -z "$RUN_NAME" ]; then
     RUN_NAME=cft-rl
