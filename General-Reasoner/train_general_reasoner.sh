@@ -181,7 +181,7 @@ HYDRA_FULL_ERROR=1 ray job submit --address=${HEAD_IP}:6379 \
     actor_rollout_ref.model.use_remove_padding=True \
     actor_rollout_ref.actor.ppo_mini_batch_size=$PPO_MINI_BATCH_SIZE \
     actor_rollout_ref.actor.ppo_micro_batch_size_per_gpu=$PPO_MICRO_BATCH_SIZE \
-    actor_rollout_ref.actor.use_kl_loss=True \
+    actor_rollout_ref.actor.use_kl_loss=False \
     actor_rollout_ref.actor.kl_loss_coef=$KL_LOSS_COEF \
     actor_rollout_ref.actor.entropy_coeff=$ENTROPY_COEFFIENT \
     actor_rollout_ref.actor.clip_ratio=$CLIP_RATIO \
