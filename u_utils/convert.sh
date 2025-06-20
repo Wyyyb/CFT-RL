@@ -1,5 +1,5 @@
 export INIT_MODEL_PATH="/scratch/y726wang/CFT-RL/verl-data/Qwen3-4B-Base"
-export CHECKPOINT_PATH="/scratch/y726wang/CFT-RL/verl-data/save_checkpoints/cft-rl_webinstruct-verified_Qwen3-4B-Base/global_step_60"
+export CHECKPOINT_PATH="/scratch/y726wang/CFT-RL/verl-data/save_checkpoints/cft-rl_webinstruct-verified_Qwen3-4B-Base/global_step_60/actor"
 # export STEP="global_step_200"
 export TARGET_DIR="/scratch/y726wang/CFT-RL/verl-data/output_models/cft-rl_webinstruct-verified_Qwen3-4B-Base_ckpt60"
 
