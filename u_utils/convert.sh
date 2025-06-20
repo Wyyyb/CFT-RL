@@ -45,6 +45,6 @@ copy_tokenizer_files() {
 copy_tokenizer_files "$TARGET_DIR" "$INIT_MODEL_PATH"
 
 # 执行模型合并脚本
-python scripts/model_merger.py --backend fsdp --hf_model_path $INIT_MODEL_PATH --local_dir $CHECKPOINT_PATH --target_dir $TARGET_DIR
+python model_merger.py --backend fsdp --hf_model_path $INIT_MODEL_PATH --local_dir $CHECKPOINT_PATH --target_dir $TARGET_DIR
 
 echo "Model convert done for $TARGET_DIR"
