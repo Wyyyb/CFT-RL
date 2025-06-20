@@ -79,6 +79,7 @@ def convert_fsdp_checkpoints_to_hfmodels():
     rank = 0
     world_size = 0
     for filename in os.listdir(local_dir):
+        print("local_dir", local_dir)
         match = re.match(r"model_world_size_(\d+)_rank_0\.pt", filename)
         if match:
             world_size = match.group(1)
