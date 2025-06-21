@@ -13,6 +13,7 @@ source /scratch/y726wang/verl-tool/.venv/bin/activate
 
 # 设置工作目录（根据您的实际目录调整）
 export WORKING_DIR=$(pwd)
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 ray start --head --node-ip-address 0.0.0.0 --num-gpus 8
 
