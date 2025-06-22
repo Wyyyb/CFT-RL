@@ -19,4 +19,4 @@ timeout-decorator
 
 pip install timeout-decorator Pebble word2number latex2sympy2 python_dateutil
 
-flash_attn
+pip install flash-attn --no-build-isolation
