@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # source /scratch/y726wang/CFT-RL/Qwen2.5-Math-Eval-0203/.venv/bin/activate
+source /home/y726wang/projects/aip-wenhu/y726wang/miniconda3/bin/activate
 conda activate eval_math
 
 checkpoint_numbers=(20 40 60 80 100 120 140 160)
