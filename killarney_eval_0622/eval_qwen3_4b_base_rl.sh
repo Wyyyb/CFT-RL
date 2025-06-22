@@ -19,9 +19,13 @@ for ckpt_num in "${checkpoint_numbers[@]}"; do
     CHECKPOINT_PATH=${saved_ckpt_path}
     TARGET_DIR=${model_path}
 
-    echo "Converting checkpoint ${ckpt_num}"
-    cd /scratch/y726wang/CFT-RL/u_utils/
-    bash convert_ckpt.sh ${INIT_MODEL_PATH} ${CHECKPOINT_PATH} ${TARGET_DIR}
+    if ls ${model_path}/*.safetensors 1> /dev/null 2>&1; then
+        echo "Checkpoint ${ckpt_num} already converted. Skipping conversion step."
+    else
+        echo "Converting checkpoint ${ckpt_num}"
+        cd /scratch/y726wang/CFT-RL/u_utils/
+        bash convert_ckpt.sh ${INIT_MODEL_PATH} ${CHECKPOINT_PATH} ${TARGET_DIR}
+    fi
 
     echo "Processing checkpoint ${ckpt_num}"
 
