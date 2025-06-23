@@ -18,4 +18,4 @@ export WORKING_DIR=$(pwd)
 ray start --head --node-ip-address 0.0.0.0 --num-gpus 8
 
 # 直接运行训练脚本，使用脚本中的默认参数
-bash train_general_reasoner_cft.sh
+bash train_general_reasoner_cft_72_0623.sh
