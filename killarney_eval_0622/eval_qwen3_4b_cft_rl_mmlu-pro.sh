@@ -5,7 +5,7 @@ source /home/y726wang/projects/aip-wenhu/y726wang/miniconda3/bin/activate
 conda activate eval_math
 
 cd ../General-Reasoner
-export CUDA_VISIBLE_DEVICES=0
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 python -m evaluation.eval_mmlupro \
     --model_path /scratch/y726wang/CFT-RL/verl-data/qwen3_4b_cft_ckpt40 \
