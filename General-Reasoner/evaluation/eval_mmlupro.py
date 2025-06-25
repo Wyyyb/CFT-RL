@@ -66,7 +66,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     tokenizer = AutoTokenizer.from_pretrained(args.model_path)
-    llm = LLM(model=args.model_path, tensor_parallel_size=4)
+    llm = LLM(model=args.model_path, tensor_parallel_size=1)
     dataset = datasets.load_dataset('TIGER-Lab/MMLU-Pro')
     
     categories = ['computer science', 'math', 'chemistry', 'engineering', 'law', 'biology',
