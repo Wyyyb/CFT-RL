@@ -5,7 +5,7 @@ source /home/y726wang/projects/aip-wenhu/y726wang/miniconda3/bin/activate
 conda activate eval_math
 
 #checkpoint_numbers=(20 40 60 80 100 120 140 160)
-checkpoint_numbers=(140 160 180 200 220 240 260 280)
+checkpoint_numbers=(300 320 340)
 # checkpoint_numbers=(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128 132 136 140 144 148 152 156 160 164 168 172 176 180 184 188 192 196 200)
 
 export CUDA_VISIBLE_DEVICES=0
